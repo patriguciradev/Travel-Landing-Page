@@ -1,13 +1,13 @@
-const hamburger = document.querySelector(".hamburger");
+const respoIcon = document.querySelector(".respo-icon");
 const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
+respoIcon.addEventListener("click", () => {
+    respoIcon.classList.toggle("active");
     navMenu.classList.toggle("active");
 });
 
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
+    respoIcon.classList.remove("active");
     navMenu.classList.remove("active");
 }));
