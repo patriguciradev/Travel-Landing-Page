@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: auto;
+}
+
+header .nav-branding {
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.nav-branding h1 {
+    padding-top: 1.2rem;
+    font-weight: 700;
+}
+
+.logo {
+    width: 100px;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-link {
+    transition: 0.5s ease;
+}
+
+.nav-link.active {
+    color: #f4e409;
+}
+
+.nav-link:hover {
+    color: #f4e409;
+}
+
+.nav-menu .nav-item {
+    list-style-type: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 5px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+.logo h1 {
+    font-weight: 800;
+    color: #fff;
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    letter-spacing: 5px;
+}
+
+.header .menu {
+    display: flex;
+    gap: 4rem;
+    font-weight: 500;
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
+}
+
+.menu .active::after {
+    content: "";
+    width: 50px;
+    display: block;
+    position: absolute;
+    border-bottom: 4px solid #fff;
+    padding: .5rem .5rem 0 .2rem;
+}
+
+.video-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    z-index: -1;
+    opacity: .7;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #277ba5;
+    mix-blend-mode: overlay;
+    z-index: -1;
+}
+
+.content {
+    padding: .5rem 3.5rem;
+    width: 60%;
+    display: flex;
+    height: 50vh;
+}
+
+.content .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.content .title {
+    font-size: 60px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.content .sub-title {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.content .description {
+    color: #fff;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.explore {
+    padding-left: 3.5rem;
+}
+
+button {
+    padding: 1em 3em;
+    border: 2px solid #f4e409;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #f4e409;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+button:hover::before {
+    width: 105%;
+}
+
+button:hover {
+    color: #111;
+}
+
+@media only screen and (max-width: 1030px) {
+    .content {
+        width: 80%;
+    }
+    .content .description {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 110px;
+        flex-direction: column;
+        background-color: #277ba5;
+        width: 100%;
+        text-align: center;
+        transition: 0.50s;
+        gap: 2px;
+    }
+    .nav-item {
+        margin: 20px 0;
+    }
+    .nav-menu.active {
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+    .navbar {
+        padding: 1rem 1rem;
+    }
+    .nav-branding h1 {
+        padding-top: 1.5rem;
+        font-size: 2.3rem;
+    }
+    .content {
+        padding: .5rem 2rem;
+        width: 100%;
+    }
+    .content .title {
+        font-size: 2.3rem;
+        padding-top: 2rem;
+    }
+    .content .sub-title {
+        font-size: 30px;
+    }
+    .content .description {
+        font-size: .8rem;
+    }
+    .explore {
+        padding-left: 2rem;
+    }
+}
